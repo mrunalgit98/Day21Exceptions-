@@ -37,4 +37,15 @@ public class ExceptionTest {
             System.out.println(e.errorMessage);
         }
     }
+
+    @Test
+    public void phone() {
+        try {
+
+            boolean result = userRegistration.validatePhone("91-9892820222");
+            Assert.assertTrue(result);
+        } catch (Invalid e) {
+            System.out.println(e.errorMessage);
+        }
+    }
 }
