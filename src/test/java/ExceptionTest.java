@@ -48,4 +48,14 @@ public class ExceptionTest {
             System.out.println(e.errorMessage);
         }
     }
+    @Test
+    public void Password() {
+        try {
+
+            boolean result = userRegistration.validatePassword("A1@aamsmads");
+            Assert.assertTrue(result);
+        } catch (Invalid e) {
+            System.out.println(e.errorMessage);
+        }
+    }
 }
