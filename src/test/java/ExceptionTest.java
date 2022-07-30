@@ -20,7 +20,18 @@ public class ExceptionTest {
     public void lastname() {
         try {
 
-            boolean result = userRegistration.validateFirstName("Bhoir");
+            boolean result = userRegistration.validateLastName("Bhoir");
+            Assert.assertTrue(result);
+        } catch (Invalid e) {
+            System.out.println(e.errorMessage);
+        }
+    }
+
+    @Test
+    public void email() {
+        try {
+
+            boolean result = userRegistration.validateEmail("xyz.abx@1212.com");
             Assert.assertTrue(result);
         } catch (Invalid e) {
             System.out.println(e.errorMessage);
