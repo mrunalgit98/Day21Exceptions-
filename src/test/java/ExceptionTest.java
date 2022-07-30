@@ -6,7 +6,7 @@ public class ExceptionTest {
     Exception userRegistration=new Exception();
 
     @Test
-    public void givenFirstName_whenValid_thenReturnTrue() {
+    public void firstname() {
         try {
 
             boolean result = userRegistration.validateFirstName("Mrunal");
