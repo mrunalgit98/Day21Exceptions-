@@ -1,5 +1,6 @@
 
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -89,5 +90,37 @@ public class Exception {
 
         }
         return true;
+    }
+    public boolean validateEmailId() throws  Invalid {
+        String Email1 = "abc@yahoo.com";
+        String Email2 = "abc-100@yahoo.com";
+        String Email3 = "abc.100@yahoo.com";
+        String Email4 = "abc111@abc.com";
+        String Email5 = "abc-100@abc.net";
+        String Email6 = "abc.100@abc.com.au";
+        String Email7 = "abc@1.com";
+        String Email8 = "abc@gmail.com.com";
+        String Email9 = "abc+100@gmail.com";
+        //Creating arrayList
+        ArrayList<String> emailIdList = new ArrayList<String>();
+        emailIdList.add(Email1);
+        emailIdList.add(Email2);
+        emailIdList.add(Email3);
+        emailIdList.add(Email4);
+        emailIdList.add(Email5);
+        emailIdList.add(Email6);
+        emailIdList.add(Email7);
+        emailIdList.add(Email8);
+        emailIdList.add(Email9);
+        for (String emailId : emailIdList) {
+            if (Pattern.matches(emailPattern, emailId)) {
+                System.out.println(emailId + " - valid ");
+                return true;
+            }
+            else {
+                System.out.println(emailId + " - Invalid ");
+            }
+        }
+        return false;
     }
 }

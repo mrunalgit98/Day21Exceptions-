@@ -58,4 +58,14 @@ public class ExceptionTest {
             System.out.println(e.errorMessage);
         }
     }
+    @Test
+    public void EmailId() {
+        try {
+
+            boolean result = userRegistration.validateEmailId();
+            Assert.assertTrue(result);
+        } catch (Invalid e) {
+            System.out.println(e.errorMessage);
+        }
+    }
 }
