@@ -21,4 +21,20 @@ public class Exception {
         }
         return true;
     }
+
+    public boolean validateLastName(String name) throws Invalid {
+        Pattern pattern = Pattern.compile(namePattern);
+        Matcher matcher = pattern.matcher(name);
+        try
+        {
+            boolean result = matcher.matches();
+            if (!result)
+                throw new Invalid("Wrong Input");
+        }
+        catch (Invalid e) {
+            System.out.println(e.errorMessage);
+
+        }
+        return true;
+    }
 }
